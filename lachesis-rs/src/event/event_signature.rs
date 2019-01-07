@@ -1,7 +1,7 @@
-use crate::event::Event;
 use crate::event::parents::Parents;
+use crate::event::Event;
+use crate::peer::PeerId;
 use failure::Error;
-use peer::PeerId;
 use ring::signature::{verify, ED25519};
 use serde::Serialize;
 

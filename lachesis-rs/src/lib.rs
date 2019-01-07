@@ -23,8 +23,8 @@ mod printable_hash;
 mod round;
 mod swirlds;
 
-// pub use event::{Event, EventHash};
-// pub use hashgraph::{BTreeHashgraph, Hashgraph, HashgraphWire};
-// pub use node::Node;
-// pub use peer::{Peer, PeerId};
-// pub use swirlds::Swirlds;
+pub use crate::event::{event_hash::EventHash, Event};
+pub use crate::hashgraph::{BTreeHashgraph, Hashgraph, HashgraphWire};
+pub use crate::node::Node;
+pub use crate::peer::{Peer, PeerId};
+pub use crate::swirlds::Swirlds;

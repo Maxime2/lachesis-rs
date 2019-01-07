@@ -1,14 +1,19 @@
-use opera::{Opera, OperaWire};
-use errors::{ResourceHashgraphPoisonError, ResourceHeadPoisonError};
-use crate::event::{Event, EventHash};
+use crate::errors::{ResourceHashgraphPoisonError, ResourceHeadPoisonError};
+use crate::event::event_hash::EventHash;
+use crate::event::Event;
+use crate::lachesis::opera::Opera;
+use crate::node::Node;
+use crate::peer::{Peer, PeerId};
 use failure::Error;
-use self::parents_list::ParentsList;
-use node::Node;
-use peer::{Peer, PeerId};
 use rand::prelude::IteratorRandom;
 use rand::Rng;
 use std::collections::HashMap;
 use std::sync::Mutex;
+
+pub mod opera;
+pub mod parents_list;
+use self::opera::OperaWire;
+use self::parents_list::ParentsList;
 
 pub struct Lachesis<P: Peer<Opera> + Clone> {
     head: Mutex<Option<EventHash>>,

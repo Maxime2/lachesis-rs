@@ -1,5 +1,5 @@
 use crate::errors::ParentsError;
-use crate::event::{EventHash, Parents};
+use crate::event::{event_hash::EventHash, parents::Parents};
 use failure::Error;
 
 #[derive(Clone, Serialize)]

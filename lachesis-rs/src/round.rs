@@ -1,4 +1,4 @@
-use crate::event::EventHash;
+use crate::event::event_hash::EventHash;
 use crate::peer::PeerId;
 use std::collections::HashMap;
 
@@ -31,7 +31,7 @@ impl Round {
 #[cfg(test)]
 mod tests {
     use super::Round;
-    use event::EventHash;
+    use crate::event::event_hash::EventHash;
     use ring::digest::{digest, SHA256};
 
     #[test]
