@@ -186,15 +186,15 @@ proptest! {
     }
 
     #[test]
-    fn it_should_report_correctly_self_parent(self_parent_hash in ".*", try in ".*") {
+    fn it_should_report_correctly_self_parent(self_parent_hash in ".*", p_try in ".*") {
         use event::{EventHash, ParentsPair};
         use ring::digest::{digest, SHA256};
         let self_parent = EventHash(digest(&SHA256, self_parent_hash.as_bytes()).as_ref().to_vec());
         let other_parent = EventHash(digest(&SHA256, b"fish").as_ref().to_vec());
         let event = Event::new(Vec::new(), Some(ParentsPair(self_parent.clone(), other_parent)), Vec::new());
-        let hash = EventHash(digest(&SHA256, try.as_bytes()).as_ref().to_vec());
+        let hash = EventHash(digest(&SHA256, p_try.as_bytes()).as_ref().to_vec());
         assert!(event.is_self_parent(&self_parent));
-        assert_eq!(self_parent_hash == try, event.is_self_parent(&hash))
+        assert_eq!(self_parent_hash == p_try, event.is_self_parent(&hash))
     }
 
     #[test]
