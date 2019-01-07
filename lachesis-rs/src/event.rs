@@ -1,15 +1,15 @@
 use bincode::serialize;
 use crate::errors::{EventError, EventErrorType};
-use parents::Parents;
+use crate::event::parents::Parents;
 use failure::Error;
-use peer::PeerId;
+use crate::peer::PeerId;
 use ring::digest::{digest, SHA256};
 use serde::Serialize;
 use std::collections::HashMap;
 
 mod event_hash;
-// mod event_signature;
-// mod parents;
+mod event_signature;
+mod parents;
 
 // pub use self::event::Event;
 // pub use self::event_hash::EventHash;

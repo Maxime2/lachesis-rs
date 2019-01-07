@@ -1,4 +1,5 @@
-use event::{Event, Parents};
+use crate::event::Event;
+use crate::event::parents::Parents;
 use failure::Error;
 use peer::PeerId;
 use ring::signature::{verify, ED25519};
