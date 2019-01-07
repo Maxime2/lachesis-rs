@@ -1,4 +1,4 @@
-use super::opera::{Opera, OperaWire};
+use opera::{Opera, OperaWire};
 use errors::{ResourceHashgraphPoisonError, ResourceHeadPoisonError};
 use event::{Event, EventHash};
 use failure::Error;

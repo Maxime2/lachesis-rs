@@ -1,5 +1,5 @@
-use event::EventHash;
-use peer::PeerId;
+use crate::event::EventHash;
+use crate::peer::PeerId;
 use std::collections::HashMap;
 
 pub struct Round {

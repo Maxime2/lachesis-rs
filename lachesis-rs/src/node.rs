@@ -1,4 +1,4 @@
-use event::EventHash;
+use crate::event::EventHash;
 use failure::Error;
 use rand::Rng;
 
