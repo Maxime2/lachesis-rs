@@ -1,12 +1,21 @@
 use bincode::serialize;
-use errors::{EventError, EventErrorType};
-use event::parents::Parents;
-use event::{EventHash, EventSignature};
+use crate::errors::{EventError, EventErrorType};
+use parents::Parents;
 use failure::Error;
 use peer::PeerId;
 use ring::digest::{digest, SHA256};
 use serde::Serialize;
 use std::collections::HashMap;
+
+mod event_hash;
+// mod event_signature;
+// mod parents;
+
+// pub use self::event::Event;
+// pub use self::event_hash::EventHash;
+// pub use self::event_signature::EventSignature;
+// pub(crate) use self::parents::{Parents, ParentsPair};
+
 
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 pub struct Event<P: Parents + Clone + Serialize> {

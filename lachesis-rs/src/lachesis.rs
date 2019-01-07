@@ -1,8 +1,8 @@
 use opera::{Opera, OperaWire};
 use errors::{ResourceHashgraphPoisonError, ResourceHeadPoisonError};
-use event::{Event, EventHash};
+use crate::event::{Event, EventHash};
 use failure::Error;
-use lachesis::parents_list::ParentsList;
+use self::parents_list::ParentsList;
 use node::Node;
 use peer::{Peer, PeerId};
 use rand::prelude::IteratorRandom;

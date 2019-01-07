@@ -1,6 +1,6 @@
-use event::EventHash;
+use crate::event::EventHash;
 use failure::Error;
-use hashgraph::Hashgraph;
+use crate::hashgraph::Hashgraph;
 use std::cmp::max;
 
 pub trait Parents {
